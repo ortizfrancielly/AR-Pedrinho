@@ -6,12 +6,16 @@
 //
 
 import ARKit
+import Combine
 import RealityKit
 
 class SessionDelegate: NSObject, ARSessionDelegate {
-    
-    weak var arView: ARView?
     var counter: Int = 0
+    private let faceReadingSubject: PassthroughSubject<(left: Double, right: Double), Never> = .init()
+    
+    var faceReadingPublisher: AnyPublisher<(left: Double, right: Double), Never> {
+        faceReadingSubject.eraseToAnyPublisher()
+    }
     
     func session(_ session: ARSession, didAdd anchors: [ARAnchor]) {
         print(anchors)
@@ -22,13 +26,11 @@ class SessionDelegate: NSObject, ARSessionDelegate {
         anchors
             .compactMap { $0 as? ARFaceAnchor }
             .forEach { faceAnchor in
-                if faceAnchor.blendShapes[.eyeBlinkLeft]?.doubleValue ?? 0 > 0.8 && faceAnchor.blendShapes[.eyeBlinkRight]?.doubleValue ?? 0 > 0.8 {
-                    counter += 1
-                    //print("eyes are closed")
-                } else {
-                    counter -= 1
-                    //print("eyes are open")
+                if let left = faceAnchor.blendShapes[.eyeBlinkLeft]?.doubleValue,
+                   let right = faceAnchor.blendShapes[.eyeBlinkRight]?.doubleValue {
+                    faceReadingSubject.send((left: left, right: right))
                 }
+                
             }
     }
 }

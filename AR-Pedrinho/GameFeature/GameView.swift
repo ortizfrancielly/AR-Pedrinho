@@ -9,32 +9,17 @@ import SwiftUI
 import RealityKit
 import SceneKit
 
-struct ContentView : View {
-    @State var frequency: Int = 3
-    @State var time: Int = 0
-    @State var shouldPlay: Bool = true
-    @State var score: Int = 34
-    
-    private let timer = Timer.publish(every: 1,
-                                      on: .main,
-                                      in: .default).autoconnect()
+struct GameView : View {
+    @ObservedObject var viewModel: GameViewModel = .init()
     
     var body: some View {
         ZStack {
-            Rectangle().fill(.black).ignoresSafeArea()
-            //ARViewContainer().ignoresSafeArea()
+//            ARViewContainer(delegate: viewModel.delegate)
+//                .ignoresSafeArea()
+            
             overlay
         }
-        .onReceive(timer) { _ in
-            time += 1
-            
-            if time % frequency == 0 {
-                shouldPlay.toggle()
-                frequency = Int.random(in: 4...10)
-            }
-            
-            print("time: \(time)", "frequency: \(frequency)")
-        }
+        //.onAppear(perform: viewModel.startUp)
     }
     
     @ViewBuilder
@@ -42,7 +27,7 @@ struct ContentView : View {
         VStack {
             HStack {
                 Spacer()
-                Text("Score: **\(score)**")
+                Text("Score: **\(viewModel.score)**")
                     .padding()
                     .background(Color(uiColor: .secondarySystemBackground))
                     .cornerRadius(12)
@@ -50,7 +35,8 @@ struct ContentView : View {
             }
             Spacer()
             Group {
-                SoundPlayer(shouldPlay: $shouldPlay, color: .purple)
+                SoundPlayer(shouldPlay: $viewModel.shouldPlay,
+                            color: .purple)
                     .frame(height: 150)
             }
             .padding()
@@ -62,7 +48,7 @@ struct ContentView : View {
 #if DEBUG
 struct ContentView_Previews : PreviewProvider {
     static var previews: some View {
-        ContentView()
+        GameView()
     }
 }
 #endif

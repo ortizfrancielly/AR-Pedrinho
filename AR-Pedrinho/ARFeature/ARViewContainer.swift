@@ -10,6 +10,7 @@ import RealityKit
 import ARKit
 
 struct ARViewContainer: UIViewRepresentable {
+    var delegate: SessionDelegate
     
     func makeUIView(context: Context) -> ARView {
         let arView = ARView(frame: .zero)
@@ -24,7 +25,6 @@ struct ARViewContainer: UIViewRepresentable {
         configuration.environmentTexturing = .automatic
         configuration.userFaceTrackingEnabled = true
         UIApplication.shared.isIdleTimerDisabled = true
-        context.coordinator.arView = arView
         arView.session.delegate = context.coordinator
         
         arView.session.run(configuration)
@@ -41,7 +41,7 @@ struct ARViewContainer: UIViewRepresentable {
     func updateUIView(_ uiView: ARView, context: Context) {}
     
     func makeCoordinator() -> SessionDelegate {
-        SessionDelegate()
+        delegate
     }
     
 }

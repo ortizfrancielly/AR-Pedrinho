@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		17DE84C928494604005C0692 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DE84C828494604005C0692 /* AppDelegate.swift */; };
-		17DE84CB28494604005C0692 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DE84CA28494604005C0692 /* ContentView.swift */; };
+		17DE84CB28494604005C0692 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DE84CA28494604005C0692 /* GameView.swift */; };
 		17DE84CD28494604005C0692 /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 17DE84CC28494604005C0692 /* Experience.rcproject */; };
 		17DE84CF28494607005C0692 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17DE84CE28494607005C0692 /* Assets.xcassets */; };
 		17DE84D228494607005C0692 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17DE84D128494607005C0692 /* Preview Assets.xcassets */; };
@@ -16,12 +16,14 @@
 		5B30DF0B284E916D0011909B /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B30DF0A284E916D0011909B /* SoundPlayer.swift */; };
 		5B75C491284951DD00384898 /* ARViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B75C490284951DD00384898 /* ARViewContainer.swift */; };
 		5B75C493284953D800384898 /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B75C492284953D800384898 /* SessionDelegate.swift */; };
+		5B9D10DD284FBE63007DD3AA /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9D10DC284FBE63007DD3AA /* GameViewModel.swift */; };
+		5B9D10E1284FDF51007DD3AA /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9D10E0284FDF51007DD3AA /* MenuView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		17DE84C528494604005C0692 /* AR-Pedrinho.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AR-Pedrinho.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		17DE84C828494604005C0692 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		17DE84CA28494604005C0692 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		17DE84CA28494604005C0692 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		17DE84CC28494604005C0692 /* Experience.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Experience.rcproject; sourceTree = "<group>"; };
 		17DE84CE28494607005C0692 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		17DE84D128494607005C0692 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -29,6 +31,8 @@
 		5B30DF0A284E916D0011909B /* SoundPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
 		5B75C490284951DD00384898 /* ARViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewContainer.swift; sourceTree = "<group>"; };
 		5B75C492284953D800384898 /* SessionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDelegate.swift; sourceTree = "<group>"; };
+		5B9D10DC284FBE63007DD3AA /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		5B9D10E0284FDF51007DD3AA /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,10 +65,11 @@
 		17DE84C728494604005C0692 /* AR-Pedrinho */ = {
 			isa = PBXGroup;
 			children = (
+				5B9D10DF284FDF40007DD3AA /* MenuFeature */,
+				5B9D10DE284FC167007DD3AA /* GameFeature */,
 				5B9D10DB284FBBE9007DD3AA /* SoundFeature */,
 				5B75C48F284951CA00384898 /* ARFeature */,
 				17DE84C828494604005C0692 /* AppDelegate.swift */,
-				17DE84CA28494604005C0692 /* ContentView.swift */,
 				17DE84CE28494607005C0692 /* Assets.xcassets */,
 				17DE84D028494607005C0692 /* Preview Content */,
 			);
@@ -96,6 +101,23 @@
 				5B30DF0A284E916D0011909B /* SoundPlayer.swift */,
 			);
 			path = SoundFeature;
+			sourceTree = "<group>";
+		};
+		5B9D10DE284FC167007DD3AA /* GameFeature */ = {
+			isa = PBXGroup;
+			children = (
+				5B9D10DC284FBE63007DD3AA /* GameViewModel.swift */,
+				17DE84CA28494604005C0692 /* GameView.swift */,
+			);
+			path = GameFeature;
+			sourceTree = "<group>";
+		};
+		5B9D10DF284FDF40007DD3AA /* MenuFeature */ = {
+			isa = PBXGroup;
+			children = (
+				5B9D10E0284FDF51007DD3AA /* MenuView.swift */,
+			);
+			path = MenuFeature;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,11 +191,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				17DE84CB28494604005C0692 /* ContentView.swift in Sources */,
+				17DE84CB28494604005C0692 /* GameView.swift in Sources */,
+				5B9D10E1284FDF51007DD3AA /* MenuView.swift in Sources */,
 				5B75C493284953D800384898 /* SessionDelegate.swift in Sources */,
 				5B75C491284951DD00384898 /* ARViewContainer.swift in Sources */,
 				17DE84C928494604005C0692 /* AppDelegate.swift in Sources */,
 				5B30DF0B284E916D0011909B /* SoundPlayer.swift in Sources */,
+				5B9D10DD284FBE63007DD3AA /* GameViewModel.swift in Sources */,
 				17DE84CD28494604005C0692 /* Experience.rcproject in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
