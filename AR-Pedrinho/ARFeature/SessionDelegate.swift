@@ -13,6 +13,10 @@ class SessionDelegate: NSObject, ARSessionDelegate {
     weak var arView: ARView?
     var counter: Int = 0
     
+    func session(_ session: ARSession, didAdd anchors: [ARAnchor]) {
+        print(anchors)
+    }
+    
     func session(_ session: ARSession, didUpdate anchors: [ARAnchor]) {
         
         anchors

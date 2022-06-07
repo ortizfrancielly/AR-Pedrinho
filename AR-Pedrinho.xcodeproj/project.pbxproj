@@ -12,6 +12,8 @@
 		17DE84CD28494604005C0692 /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 17DE84CC28494604005C0692 /* Experience.rcproject */; };
 		17DE84CF28494607005C0692 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17DE84CE28494607005C0692 /* Assets.xcassets */; };
 		17DE84D228494607005C0692 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17DE84D128494607005C0692 /* Preview Assets.xcassets */; };
+		5B23A938284A803E0069BA43 /* 01-ACORDA-PEDRINHO.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5B23A937284A803E0069BA43 /* 01-ACORDA-PEDRINHO.mp3 */; };
+		5B30DF0B284E916D0011909B /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B30DF0A284E916D0011909B /* SoundPlayer.swift */; };
 		5B75C491284951DD00384898 /* ARViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B75C490284951DD00384898 /* ARViewContainer.swift */; };
 		5B75C493284953D800384898 /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B75C492284953D800384898 /* SessionDelegate.swift */; };
 /* End PBXBuildFile section */
@@ -23,6 +25,8 @@
 		17DE84CC28494604005C0692 /* Experience.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Experience.rcproject; sourceTree = "<group>"; };
 		17DE84CE28494607005C0692 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		17DE84D128494607005C0692 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5B23A937284A803E0069BA43 /* 01-ACORDA-PEDRINHO.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "01-ACORDA-PEDRINHO.mp3"; sourceTree = "<group>"; };
+		5B30DF0A284E916D0011909B /* SoundPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
 		5B75C490284951DD00384898 /* ARViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewContainer.swift; sourceTree = "<group>"; };
 		5B75C492284953D800384898 /* SessionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -57,10 +61,10 @@
 		17DE84C728494604005C0692 /* AR-Pedrinho */ = {
 			isa = PBXGroup;
 			children = (
+				5B9D10DB284FBBE9007DD3AA /* SoundFeature */,
 				5B75C48F284951CA00384898 /* ARFeature */,
 				17DE84C828494604005C0692 /* AppDelegate.swift */,
 				17DE84CA28494604005C0692 /* ContentView.swift */,
-				17DE84CC28494604005C0692 /* Experience.rcproject */,
 				17DE84CE28494607005C0692 /* Assets.xcassets */,
 				17DE84D028494607005C0692 /* Preview Content */,
 			);
@@ -78,10 +82,20 @@
 		5B75C48F284951CA00384898 /* ARFeature */ = {
 			isa = PBXGroup;
 			children = (
+				17DE84CC28494604005C0692 /* Experience.rcproject */,
 				5B75C490284951DD00384898 /* ARViewContainer.swift */,
 				5B75C492284953D800384898 /* SessionDelegate.swift */,
 			);
 			path = ARFeature;
+			sourceTree = "<group>";
+		};
+		5B9D10DB284FBBE9007DD3AA /* SoundFeature */ = {
+			isa = PBXGroup;
+			children = (
+				5B23A937284A803E0069BA43 /* 01-ACORDA-PEDRINHO.mp3 */,
+				5B30DF0A284E916D0011909B /* SoundPlayer.swift */,
+			);
+			path = SoundFeature;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,6 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				17DE84D228494607005C0692 /* Preview Assets.xcassets in Resources */,
+				5B23A938284A803E0069BA43 /* 01-ACORDA-PEDRINHO.mp3 in Resources */,
 				17DE84CF28494607005C0692 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -158,6 +173,7 @@
 				5B75C493284953D800384898 /* SessionDelegate.swift in Sources */,
 				5B75C491284951DD00384898 /* ARViewContainer.swift in Sources */,
 				17DE84C928494604005C0692 /* AppDelegate.swift in Sources */,
+				5B30DF0B284E916D0011909B /* SoundPlayer.swift in Sources */,
 				17DE84CD28494604005C0692 /* Experience.rcproject in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -304,7 +320,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "br.dev.ortiz.AR-Pedrinho";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gbrlcm.ARcorda-Pedrinho";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -337,7 +353,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "br.dev.ortiz.AR-Pedrinho";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gbrlcm.ARcorda-Pedrinho";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

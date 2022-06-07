@@ -7,6 +7,7 @@
 
 import UIKit
 import SwiftUI
+import AVFoundation
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -24,6 +25,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window.rootViewController = UIHostingController(rootView: contentView)
         self.window = window
         window.makeKeyAndVisible()
+        
+        let audioSession = AVAudioSession.sharedInstance()
+             do {
+                try audioSession.setCategory(.playback)
+             } catch {
+                 print("Setting category to AVAudioSessionCategoryPlayback failed.")
+             }
+        
         return true
     }
 

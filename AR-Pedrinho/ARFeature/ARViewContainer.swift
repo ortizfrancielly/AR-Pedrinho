@@ -27,11 +27,13 @@ struct ARViewContainer: UIViewRepresentable {
         context.coordinator.arView = arView
         arView.session.delegate = context.coordinator
         
-        let ballAnchor = try! Experience.loadBall()
-        
         arView.session.run(configuration)
         
-        arView.scene.anchors.append(ballAnchor)
+        let ball = try! Experience.loadBall().ball!
+        let anchor = AnchorEntity()
+        anchor.addChild(ball)
+        ball.position = .init(x: 0, y: 0, z: -2)
+        arView.scene.addAnchor(anchor)
         return arView
         
     }
