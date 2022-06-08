@@ -17,34 +17,238 @@
                 -9.8000001907348633,
                 0
               ],
-              "identifier" : "F9610871-0955-494F-A5C3-51D1A281BAB3",
+              "identifier" : "490D2F6D-FBF9-45F0-A970-1F72C885CCD7",
               "material" : "concrete",
               "overrides" : {
                 "children" : {
-                  "4A213441-135C-450E-8EF8-1A4EAB267C1D" : null,
-                  "7F5F1ADC-E5E4-4EF5-A5B5-FC43B071FFA5" : null,
-                  "632E476F-1E55-4E30-9723-1C51DD2E8B89" : null,
-                  "B91C7CA3-4AB1-4253-9A84-07383168A8A8" : null,
-                  "DA88A2AE-3911-4469-A103-2C2E92B92D04" : {
+                  "433EFBE8-687A-4325-818E-7830E3ED1422" : null,
+                  "8020ED13-5749-4325-B1FD-DF332D4ED26E" : {
                     "overrides" : {
-                      "arguments" : [
+                      "children" : {
+                        "USDScene" : {
+                          "overrides" : {
+                            "arguments" : [
+                              [
+                                "includeSceneScaling",
+                                {
+                                  "typeName" : "Bool",
+                                  "value" : false
+                                }
+                              ],
+                              [
+                                "subpath",
+                                {
+                                  "typeName" : "String",
+                                  "value" : ""
+                                }
+                              ],
+                              [
+                                "url",
+                                {
+                                  "typeName" : "String",
+                                  "value" : "model:7d000271a445133b5bcfb0aaf984be30\/pedrinhoSleeping2.usdz"
+                                }
+                              ],
+                              [
+                                "withDescendants",
+                                {
+                                  "typeName" : "Bool",
+                                  "value" : true
+                                }
+                              ]
+                            ],
+                            "factory" : {
+                              "identifier" : "com.apple.af.FileImportAssetFactory",
+                              "version" : "0.0"
+                            },
+                            "runtimeAttributes" : [
+                              [
+                                "RuntimeIdentifier",
+                                {
+                                  "typeName" : "UUID",
+                                  "value" : "56F6F6C0-D818-41D6-ABDA-220CFE6273AE"
+                                }
+                              ]
+                            ]
+                          },
+                          "transform" : {
+                            "matrix" : [
+                              1,
+                              0,
+                              0,
+                              0,
+                              0,
+                              1,
+                              0,
+                              0,
+                              0,
+                              0,
+                              1,
+                              0,
+                              0,
+                              0,
+                              0,
+                              1
+                            ]
+                          }
+                        }
+                      },
+                      "factory" : {
+                        "identifier" : "com.apple.af.Group",
+                        "version" : "0.0"
+                      },
+                      "runtimeAttributes" : [
                         [
-                          "item",
+                          "RuntimeIdentifier",
                           {
-                            "typeName" : "String",
-                            "value" : "Eight Ball"
+                            "typeName" : "UUID",
+                            "value" : "7A8A49B2-185C-47E8-B29B-A64303551281"
                           }
                         ],
                         [
-                          "style",
+                          "entityName",
                           {
                             "typeName" : "String",
-                            "value" : "Stylized"
+                            "value" : "Pedrinho1"
+                          }
+                        ]
+                      ]
+                    },
+                    "transform" : {
+                      "matrix" : [
+                        1,
+                        0,
+                        0,
+                        0,
+                        0,
+                        1,
+                        0,
+                        0,
+                        0,
+                        0,
+                        1,
+                        0,
+                        3.8771231174468994,
+                        -1.2349965572357178,
+                        0,
+                        1
+                      ]
+                    }
+                  },
+                  "30662CAF-3AC4-4B1E-8F1A-A0654B6B361B" : {
+                    "overrides" : {
+                      "arguments" : [
+                        [
+                          "bgMaterial",
+                          {
+                            "typeName" : "String",
+                            "value" : "plastic"
+                          }
+                        ],
+                        [
+                          "bgMaterialColor",
+                          {
+                            "typeName" : "double4",
+                            "value" : [
+                              0.20000000000000001,
+                              0.59999999999999998,
+                              1,
+                              1
+                            ]
+                          }
+                        ],
+                        [
+                          "boundHeight",
+                          {
+                            "typeName" : "Double",
+                            "value" : 1.5
+                          }
+                        ],
+                        [
+                          "boundWidth",
+                          {
+                            "typeName" : "Double",
+                            "value" : 7.3300000000000001
+                          }
+                        ],
+                        [
+                          "depth",
+                          {
+                            "typeName" : "Double",
+                            "value" : 0.128
+                          }
+                        ],
+                        [
+                          "font",
+                          {
+                            "typeName" : "String",
+                            "value" : "Helvetica"
+                          }
+                        ],
+                        [
+                          "hasBackground",
+                          {
+                            "typeName" : "Bool",
+                            "value" : true
+                          }
+                        ],
+                        [
+                          "height",
+                          {
+                            "typeName" : "Double",
+                            "value" : 0.10000000000000001
+                          }
+                        ],
+                        [
+                          "horizontalAlignment",
+                          {
+                            "typeName" : "String",
+                            "value" : "center"
+                          }
+                        ],
+                        [
+                          "material",
+                          {
+                            "typeName" : "String",
+                            "value" : "plastic"
+                          }
+                        ],
+                        [
+                          "materialColor",
+                          {
+                            "typeName" : "double4",
+                            "value" : [
+                              1,
+                              1,
+                              1,
+                              1
+                            ]
+                          }
+                        ],
+                        [
+                          "oneLine",
+                          {
+                            "typeName" : "Bool",
+                            "value" : false
+                          }
+                        ],
+                        [
+                          "text",
+                          {
+                            "typeName" : "String",
+                            "value" : "Selecione para Editar"
+                          }
+                        ],
+                        [
+                          "verticalPosition",
+                          {
+                            "typeName" : "String",
+                            "value" : "middle"
                           }
                         ]
                       ],
                       "children" : {
-                        "item" : {
+                        "back_1" : {
                           "overrides" : {
                             "factory" : null,
                             "runtimeAttributes" : [
@@ -52,7 +256,7 @@
                                 "RuntimeIdentifier",
                                 {
                                   "typeName" : "UUID",
-                                  "value" : "B62CF23B-9A4E-494D-B78C-3ED1A6AFBD9E"
+                                  "value" : "0307B4B5-47D3-4EB5-B5E8-30C0383D1EBC"
                                 }
                               ]
                             ]
@@ -60,47 +264,41 @@
                         }
                       },
                       "factory" : {
-                        "identifier" : "com.apple.rc.af.EightBall.d382f5e2-24ea-4a25-bd45-d4b5282c76d1",
-                        "version" : "1.0"
+                        "identifier" : "com.apple.rc.af.CoreAssetFactories.Text",
+                        "version" : "0.0"
                       },
                       "runtimeAttributes" : [
                         [
                           "RuntimeIdentifier",
                           {
                             "typeName" : "UUID",
-                            "value" : "222C247C-40EB-4B8D-ACF3-EDFB44931C63"
-                          }
-                        ],
-                        [
-                          "entityName",
-                          {
-                            "typeName" : "String",
-                            "value" : "Ball"
+                            "value" : "CCB9EF5D-5ABE-4AA7-BD81-8FF303BE2565"
                           }
                         ]
                       ]
                     },
                     "transform" : {
                       "matrix" : [
-                        10.000000953674316,
+                        0.17378997802734375,
+                        -9.7145864685899141e-09,
+                        -1.6184780804451293e-07,
                         0,
+                        -1.3530696207908477e-07,
+                        0.08689502626657486,
+                        -0.15050648152828217,
                         0,
+                        8.9337007125322998e-08,
+                        0.15050648152828217,
+                        0.08689502626657486,
                         0,
-                        0,
-                        10.000000953674316,
-                        0,
-                        0,
-                        0,
-                        0,
-                        10.000000953674316,
-                        0,
-                        4.2608011341371821e-08,
-                        0,
-                        -0.2548462450504303,
+                        -0.00010454517178004608,
+                        0.0076338890939950943,
+                        0.0075039062649011612,
                         1
                       ]
                     }
-                  }
+                  },
+                  "Cube" : null
                 },
                 "factory" : null,
                 "runtimeAttributes" : [
@@ -114,24 +312,217 @@
                 ]
               },
               "physicsMode" : "grid",
-              "title" : "Ball",
+              "title" : "PedrinhoAwake",
               "viewTransform" : {
                 "cameraTransform" : [
+                  0.99999290704727173,
+                  3.4924593772522883e-10,
+                  -0.0037536527961492538,
+                  0,
+                  -0.0018794351490214467,
+                  0.8656238317489624,
+                  -0.50069135427474976,
+                  0,
+                  0.0032492512837052345,
+                  0.5006948709487915,
+                  0.86561769247055054,
+                  0,
+                  14.251173973083496,
+                  16.233829498291016,
+                  19.017547607421875,
+                  1
+                ],
+                "sceneTransform" : [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
                   0.99999994039535522,
                   0,
                   0,
                   0,
                   0,
+                  0.99999994039535522,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            }
+          ],
+          "__version" : 5
+        },
+        {
+          "__content" : [
+            {
+              "arAnchorSpecification" : {
+                "alignment" : "horizontal",
+                "name" : "surface"
+              },
+              "behaviors" : [
+
+              ],
+              "gravity" : [
+                0,
+                -9.8000001907348633,
+                0
+              ],
+              "identifier" : "F9610871-0955-494F-A5C3-51D1A281BAB3",
+              "material" : "concrete",
+              "overrides" : {
+                "children" : {
+                  "4A213441-135C-450E-8EF8-1A4EAB267C1D" : null,
+                  "7F5F1ADC-E5E4-4EF5-A5B5-FC43B071FFA5" : null,
+                  "632E476F-1E55-4E30-9723-1C51DD2E8B89" : null,
+                  "B91C7CA3-4AB1-4253-9A84-07383168A8A8" : null,
+                  "BD06AD42-204F-4D64-869C-230728872B08" : {
+                    "overrides" : {
+                      "children" : {
+                        "USDScene" : {
+                          "overrides" : {
+                            "arguments" : [
+                              [
+                                "includeSceneScaling",
+                                {
+                                  "typeName" : "Bool",
+                                  "value" : false
+                                }
+                              ],
+                              [
+                                "subpath",
+                                {
+                                  "typeName" : "String",
+                                  "value" : ""
+                                }
+                              ],
+                              [
+                                "url",
+                                {
+                                  "typeName" : "String",
+                                  "value" : "model:4109fc2c29cbba96bcda8df16d03b079\/pedrinhoAwake.usdz"
+                                }
+                              ],
+                              [
+                                "withDescendants",
+                                {
+                                  "typeName" : "Bool",
+                                  "value" : true
+                                }
+                              ]
+                            ],
+                            "factory" : {
+                              "identifier" : "com.apple.af.FileImportAssetFactory",
+                              "version" : "0.0"
+                            },
+                            "runtimeAttributes" : [
+                              [
+                                "RuntimeIdentifier",
+                                {
+                                  "typeName" : "UUID",
+                                  "value" : "AE36AA87-69B9-43DA-BA61-7B43D70351E2"
+                                }
+                              ]
+                            ]
+                          },
+                          "transform" : {
+                            "matrix" : [
+                              1,
+                              0,
+                              0,
+                              0,
+                              0,
+                              1,
+                              0,
+                              0,
+                              0,
+                              0,
+                              1,
+                              0,
+                              0,
+                              0,
+                              0,
+                              1
+                            ]
+                          }
+                        }
+                      },
+                      "factory" : {
+                        "identifier" : "com.apple.af.Group",
+                        "version" : "0.0"
+                      },
+                      "runtimeAttributes" : [
+                        [
+                          "RuntimeIdentifier",
+                          {
+                            "typeName" : "UUID",
+                            "value" : "843D72CC-725C-470A-98AA-560E39882237"
+                          }
+                        ],
+                        [
+                          "entityName",
+                          {
+                            "typeName" : "String",
+                            "value" : "Pedrinho2"
+                          }
+                        ]
+                      ]
+                    },
+                    "transform" : {
+                      "matrix" : [
+                        1,
+                        0,
+                        0,
+                        0,
+                        0,
+                        1,
+                        0,
+                        0,
+                        0,
+                        0,
+                        1,
+                        0,
+                        -0.98263728618621826,
+                        -0.15455314517021179,
+                        0.083542823791503906,
+                        1
+                      ]
+                    }
+                  },
+                  "DA88A2AE-3911-4469-A103-2C2E92B92D04" : null
+                },
+                "factory" : null,
+                "runtimeAttributes" : [
+                  [
+                    "isAccessibilityEnabled",
+                    {
+                      "typeName" : "Bool",
+                      "value" : false
+                    }
+                  ]
+                ]
+              },
+              "physicsMode" : "grid",
+              "title" : "PedrinhoSleeping",
+              "viewTransform" : {
+                "cameraTransform" : [
+                  0.99994564056396484,
+                  0,
+                  -0.010421563871204853,
+                  0,
+                  -0.0061466488987207413,
                   0.80754858255386353,
-                  -0.58980095386505127,
+                  -0.58976888656616211,
                   0,
+                  0.0084159187972545624,
+                  0.58980089426040649,
+                  0.80750477313995361,
                   0,
-                  0.58980095386505127,
-                  0.80754858255386353,
-                  0,
-                  -0.019329123198986053,
-                  0.69272142648696899,
-                  0.83701843023300171,
+                  -0.065091252326965332,
+                  12.286287307739258,
+                  13.022506713867188,
                   1
                 ],
                 "sceneTransform" : [
