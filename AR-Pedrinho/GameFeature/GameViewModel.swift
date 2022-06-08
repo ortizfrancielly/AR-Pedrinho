@@ -47,6 +47,10 @@ final class GameViewModel: ObservableObject {
             .throttle(for: .seconds(1), scheduler: RunLoop.main, latest: true)
             .map(isEyesOpen)
             .assign(to: &$isOpen)
+        
+        $shouldPlay
+            .sink(receiveValue: delegate.updateAnchor)
+            .store(in: &cancellables)
     }
     
     private func isEyesOpen(_ data: (left: Double, right: Double)) -> Bool {
@@ -98,7 +102,7 @@ final class GameViewModel: ObservableObject {
     
     private func handleEndGame() {
         if shouldEndGame(eyesStatus: isOpen, playStatus: shouldPlay), endGameCounter == endGameLimit {
-            fatalError()
+            //fatalError()
         }
     }
     

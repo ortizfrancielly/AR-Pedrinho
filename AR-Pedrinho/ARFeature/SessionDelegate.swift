@@ -11,6 +11,8 @@ import RealityKit
 
 class SessionDelegate: NSObject, ARSessionDelegate {
     var counter: Int = 0
+    weak var planeAnchor: AnchorEntity?
+    
     private let faceReadingSubject: PassthroughSubject<(left: Double, right: Double), Never> = .init()
     
     var faceReadingPublisher: AnyPublisher<(left: Double, right: Double), Never> {
@@ -32,5 +34,19 @@ class SessionDelegate: NSObject, ARSessionDelegate {
                 }
                 
             }
+    }
+    
+    func updateAnchor (_ isPedrinhoAwake: Bool) {
+        guard let planeAnchor = planeAnchor,
+        let entity = isPedrinhoAwake ?
+        try? Experience.loadPedrinhoAwake().pedrinho1 :
+        try? Experience.loadPedrinhoSleeping().pedrinho2
+        else { return }
+        
+        planeAnchor.children.forEach { entity in
+            planeAnchor.removeChild(entity)
+        }
+        
+        planeAnchor.addChild(entity)
     }
 }
