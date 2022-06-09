@@ -12,10 +12,11 @@ final class GameViewModel: ObservableObject {
     @Published var time: Int
     @Published var shouldPlay: Bool
     @Published var isOpen: Bool
+    @Published var isGameOver: Bool
     @Published var score: Int
     
     private var endGameCounter: Int
-    private let endGameLimit: Int = 2
+    private let endGameLimit: Int = 3
     
     var delegate: SessionDelegate
     
@@ -31,12 +32,24 @@ final class GameViewModel: ObservableObject {
         self.shouldPlay = true
         self.score = 0
         self.isOpen = true
+        self.isGameOver = false
         self.cancellables = Set<AnyCancellable>()
         self.endGameCounter = 0
         self.delegate = SessionDelegate()
     }
     
+    func startStats() {
+        self.time = 0
+        self.shouldPlay = true
+        self.score = 0
+        self.isOpen = true
+        self.isGameOver = false
+        self.endGameCounter = 0
+    }
+    
     func startUp() {
+        startStats()
+        
         timer
             .autoconnect()
             .sink(receiveValue: update)
@@ -45,12 +58,19 @@ final class GameViewModel: ObservableObject {
         delegate
             .faceReadingPublisher
             .throttle(for: .seconds(1), scheduler: RunLoop.main, latest: true)
+            .print()
             .map(isEyesOpen)
             .assign(to: &$isOpen)
     }
     
+    func finish() {
+        cancellables.forEach { cancellable in
+            cancellable.cancel()
+        }
+    }
+    
     private func isEyesOpen(_ data: (left: Double, right: Double)) -> Bool {
-        !(data.left >= 0.8 && data.right >= 0.8)
+        !(data.left >= 0.7 && data.right >= 0.7)
     }
     
     private func update(_ date: Date) {
@@ -98,7 +118,7 @@ final class GameViewModel: ObservableObject {
     
     private func handleEndGame() {
         if shouldEndGame(eyesStatus: isOpen, playStatus: shouldPlay), endGameCounter == endGameLimit {
-            fatalError()
+            isGameOver = true
         }
     }
     

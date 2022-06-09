@@ -11,6 +11,7 @@ import SceneKit
 
 struct GameView : View {
     @ObservedObject var viewModel: GameViewModel = .init()
+    @Binding var isPlayingGame: Bool
     
     var body: some View {
         ZStack {
@@ -19,7 +20,29 @@ struct GameView : View {
             
             overlay
         }
-        //.onAppear(perform: viewModel.startUp)
+        .background(
+            NavigationLink(isActive: $viewModel.isGameOver){
+                EndGameView(score: viewModel.score,
+                            isStillNavigating: $isPlayingGame)
+            } label: {
+                EmptyView()
+            }
+        )
+        .navigationBarHidden(true)
+        .onAppear(perform: viewModel.startUp)
+        .onDisappear(perform: viewModel.finish)
+    }
+    
+    func scoreText(for score: Int) -> AttributedString {
+        var string = AttributedString("Pontos: \(score)")
+        string.foregroundColor = Color("color-1")
+        
+        if let range = string.range(of: "\(score)") {
+            string[range].foregroundColor = Color("color-3")
+            string[range].font = .body.bold()
+        }
+        
+        return string
     }
     
     @ViewBuilder
@@ -27,16 +50,17 @@ struct GameView : View {
         VStack {
             HStack {
                 Spacer()
-                Text("Score: **\(viewModel.score)**")
+                Text(scoreText(for: viewModel.score))
                     .padding()
                     .background(Color(uiColor: .secondarySystemBackground))
                     .cornerRadius(12)
                     .padding(4)
+                    .padding(.trailing, 8)
             }
             Spacer()
             Group {
                 SoundPlayer(shouldPlay: $viewModel.shouldPlay,
-                            color: .purple)
+                            color: [Color("color-1"), Color("color-3")])
                     .frame(height: 150)
             }
             .padding()
@@ -48,7 +72,7 @@ struct GameView : View {
 #if DEBUG
 struct ContentView_Previews : PreviewProvider {
     static var previews: some View {
-        GameView()
+        GameView(isPlayingGame: .constant(true))
     }
 }
 #endif
