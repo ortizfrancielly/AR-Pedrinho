@@ -1,3 +1,17 @@
 [
-
+  {
+    "libraryIdentifier" : "4109fc2c29cbba96bcda8df16d03b079",
+    "format" : "model",
+    "displayName" : "pedrinhoAwake.usdz"
+  },
+  {
+    "libraryIdentifier" : "65c1af4c91deb300bbf2d91bd05a5986",
+    "format" : "model",
+    "displayName" : "pedrinhoSleeping.usdz"
+  },
+  {
+    "libraryIdentifier" : "7d000271a445133b5bcfb0aaf984be30",
+    "format" : "model",
+    "displayName" : "pedrinhoSleeping2.usdz"
+  }
 ]

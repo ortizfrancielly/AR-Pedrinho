@@ -57,14 +57,14 @@ struct SoundPlayer: View {
                 }
             }
             .onAppear {
-                //player?.play()
+                player?.play()
             }
             .onChange(of: shouldPlay) { shouldPlay in
-//                if shouldPlay {
-//                    player?.play()
-//                } else {
-//                    player?.pause()
-//                }
+                if shouldPlay {
+                    player?.play()
+                } else {
+                    player?.pause()
+                }
             }
             .onReceive(frequency) { _ in
                 update()

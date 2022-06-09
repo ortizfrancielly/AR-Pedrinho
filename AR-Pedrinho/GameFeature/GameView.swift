@@ -15,11 +15,12 @@ struct GameView : View {
     
     var body: some View {
         ZStack {
-//            ARViewContainer(delegate: viewModel.delegate)
-//                .ignoresSafeArea()
+            ARViewContainer(delegate: viewModel.delegate)
+                .ignoresSafeArea()
             
             overlay
         }
+        .onAppear(perform: viewModel.startUp)
         .background(
             NavigationLink(isActive: $viewModel.isGameOver){
                 EndGameView(score: viewModel.score,

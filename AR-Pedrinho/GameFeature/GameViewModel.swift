@@ -61,6 +61,10 @@ final class GameViewModel: ObservableObject {
             .print()
             .map(isEyesOpen)
             .assign(to: &$isOpen)
+        
+        $shouldPlay
+            .sink(receiveValue: delegate.updateAnchor)
+            .store(in: &cancellables)
     }
     
     func finish() {
@@ -119,6 +123,7 @@ final class GameViewModel: ObservableObject {
     private func handleEndGame() {
         if shouldEndGame(eyesStatus: isOpen, playStatus: shouldPlay), endGameCounter == endGameLimit {
             isGameOver = true
+
         }
     }
     
