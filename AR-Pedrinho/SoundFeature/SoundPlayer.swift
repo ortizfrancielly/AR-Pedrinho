@@ -29,7 +29,7 @@ struct SoundPlayer: View {
     }()
     
     @Binding var shouldPlay: Bool
-    var color: Color
+    var color: [Color]
     
     private func normalizeSoundLevel(level: Float) -> CGFloat {
         let val = (max(0.2, CGFloat(level) + 9) / 2) * CGFloat(abs(player?.volume ?? 1))
@@ -52,7 +52,7 @@ struct SoundPlayer: View {
         GeometryReader { proxy in
             HStack(alignment: .center) {
                 ForEach(0..<8) { i in
-                    Capsule().fill(color)
+                    Capsule().fill(color[i % 2])
                         .frame(width: proxy.size.width/8 - 8, height: proxy.size.height * normalizeSoundLevel(level: samples[i]) , alignment: .center)
                 }
             }
