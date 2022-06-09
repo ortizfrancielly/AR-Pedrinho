@@ -26,10 +26,9 @@ struct ARViewContainer: UIViewRepresentable {
         configuration.userFaceTrackingEnabled = true
         UIApplication.shared.isIdleTimerDisabled = true
         arView.session.delegate = context.coordinator
-        let anchor = AnchorEntity(plane: .horizontal)
+        let anchor = AnchorEntity(.camera)
         arView.scene.anchors.append(anchor)
         context.coordinator.planeAnchor = anchor
-        
         arView.session.run(configuration)
         return arView
         

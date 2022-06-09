@@ -36,12 +36,26 @@ class SessionDelegate: NSObject, ARSessionDelegate {
             }
     }
     
+    private func generatePedrinhoEntity(_ isPedrinhoAwake: Bool) -> Entity? {
+        let entity: Entity?
+        
+        if isPedrinhoAwake {
+            entity = try? Experience.loadPedrinhoAwake().pedrinho1
+            entity?.position = SIMD3(-1.5, -1, -2)
+        } else {
+            entity = try? Experience.loadPedrinhoSleeping().pedrinho2
+            entity?.position = SIMD3(0, -0.5, -2)
+        }
+        
+        return entity
+    }
+    
     func updateAnchor (_ isPedrinhoAwake: Bool) {
         guard let planeAnchor = planeAnchor,
-        let entity = isPedrinhoAwake ?
-        try? Experience.loadPedrinhoAwake().pedrinho1 :
-        try? Experience.loadPedrinhoSleeping().pedrinho2
-        else { return }
+              let entity = generatePedrinhoEntity(isPedrinhoAwake)
+        else {
+            
+            return }
         
         planeAnchor.children.forEach { entity in
             planeAnchor.removeChild(entity)
