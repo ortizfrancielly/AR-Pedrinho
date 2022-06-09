@@ -8,32 +8,61 @@
 import SwiftUI
 
 struct MenuView: View {
+    @State
+    var isPlayingGame: Bool = false
+    
     var body: some View {
-        VStack {
-            Spacer()
-            title
-            Spacer()
-            Spacer()
-            Spacer()
+        NavigationView {
+            VStack {
+                Spacer()
+                title
+                Spacer()
+                Spacer()
+                NavigationLink("Jogar", isActive: $isPlayingGame) {
+                    GameView(viewModel: GameViewModel(), isPlayingGame: $isPlayingGame)
+                }
+                .buttonStyle(.borderedProminent)
+                .foregroundColor(.white)
+                .tint(Color("color-3"))
+                .font(.largeTitle.bold())
+                Spacer()
+            }
+            .fullScreenBackground(of: Color(uiColor: .secondarySystemBackground))
+            .navigationBarHidden(true)
         }
+    }
+    
+    var titleString: AttributedString {
+        var string = AttributedString("ARcorda")
+        string.foregroundColor = Color("color-1")
+        
+        if let range = string.range(of: "AR") {
+            string[range].foregroundColor = Color("color-3")
+        }
+        
+        return string
     }
     
     @ViewBuilder
     var title: some View {
         VStack {
-            Text("ACORDA")
+            Text(titleString)
                 .font(.system(size: 74))
                 .fontWeight(.black)
-                .foregroundLinearGradient(colors: [.blue, .blue, .red, .yellow], startPoint: .top, endPoint: .bottom)
+                .foregroundColor(.indigo)
                 
             HStack {
                 Spacer()
                 Text("Pedrinho")
                     .font(.system(size: 32))
                     .fontWeight(.bold)
-                    .foregroundLinearGradient(colors: [.blue, .blue, .red, .yellow], startPoint: .top, endPoint: .bottom)
+                    .foregroundColor(Color("color-1"))
                     .padding(.horizontal, 24)
-                    .background(Capsule().stroke(.blue, lineWidth: 4))
+                    .background(
+                        Capsule()
+                            .stroke(Color("color-3"),
+                                    lineWidth: 4)
+                    )
                     .padding(.trailing, 32)
             }
         }
@@ -63,6 +92,17 @@ extension Text {
                 self
 
             )
+        }
+    }
+}
+
+extension View {
+    
+    @ViewBuilder
+    func fullScreenBackground(of color: Color) -> some View {
+        ZStack {
+            color.ignoresSafeArea()
+            self
         }
     }
 }
